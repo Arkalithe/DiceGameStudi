@@ -122,9 +122,10 @@ html {
     margin-right: 9px;
 }
 
-.bi .btnHold {
-align-self: auto;
+.btnHold > svg {
+    margin-bottom: 10px;
 }
+
 .btnNew {
     top: 4rem;
 }
