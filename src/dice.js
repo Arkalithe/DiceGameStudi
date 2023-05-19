@@ -30,7 +30,7 @@ const changePlayer = function () {
     playerTwo.classList.toggle('activePlayer');
 };
 
-// Lancer de dé
+// Button roll pour lancer de dé
 btnRoll.addEventListener('click', function () {
     if (playing) {
         dice.classList.remove("hidden");
@@ -46,7 +46,7 @@ btnRoll.addEventListener('click', function () {
     }
 });
 
-//Retien du score dans le Global
+//Button Hold pour le retien du score dans le Global 
 btnHold.addEventListener('click', function () {
     if (playing) {
         scores[activePlayer] += currentScore;
@@ -66,8 +66,18 @@ btnHold.addEventListener('click', function () {
     }
 });
 
-
-
-
+//Button New pour commencer une nouvelle partie
+btnNew.addEventListener('click', function () {
+    playing = true
+    document.querySelector(`.player0`).classList.remove('playerWinner')
+    document.querySelector(`.player1`).classList.remove('playerWinner')
+    activePlayer = 0;
+    document.querySelector(`.player0`).classList.add('activePlayer');
+    document.querySelector(`.player1`).classList.remove('activePlayer');
+    scores[0] = 0;
+    scores[1] = 0;
+    document.getElementById(`score0`).textContent = 0;
+    document.getElementById(`score1`).textContent = 0;
+});
 
 
